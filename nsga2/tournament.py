@@ -2,6 +2,7 @@
 # encoding: utf-8
 import numpy as np
 
+
 def tournament(K, N, fit):
     '''
     tournament selection
@@ -16,7 +17,7 @@ def tournament(K, N, fit):
         a = np.random.randint(n)
         for j in range(K):
             b = np.random.randint(n)
-            for r in range(fit[(0, :)].size):
+            for r in range(fit[0, :].size):
                 if fit[(b, r)] < fit[(a, r)]:
                     a = b
         mate.append(a)

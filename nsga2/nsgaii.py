@@ -2,11 +2,11 @@
 # encoding: utf-8
 
 import numpy as np
-from nd_sort import nd_sort
-from crowding_distance import crowding_distance
-from tournament import tournament
-from environment_selection import environment_selection
-from GLOBAL import Global
+from nsga2.nd_sort import nd_sort
+from nsga2.crowding_distance import crowding_distance
+from nsga2.tournament import tournament
+from nsga2.environment_selection import environment_selection
+from nsga2.GLOBAL import Global
 
 from matplotlib import pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -15,7 +15,8 @@ import time
 Global = Global(M=3)
 
 
-class nsgaii(object):
+
+class nsgaii:
     """
     NSGA-II algorithm
     """
@@ -64,7 +65,7 @@ class nsgaii(object):
             for i in range(len(non_dominated)):
                 plt.plot(range(1, Global.M + 1), non_dominated[i, :])
 
+        plt.show()
 
 a = nsgaii()
-b=a.draw()
-plt.show()
+a.draw()

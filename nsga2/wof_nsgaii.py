@@ -2,22 +2,22 @@
 # encoding: utf-8
 import math
 import numpy as np
-from nd_sort import nd_sort
-from crowding_distance import crowding_distance
-from tournament import tournament
-from environment_selection import environment_selection
 import time
-from GLOBAL import Global
+
+from nsga2.nd_sort import nd_sort
+from nsga2.crowding_distance import crowding_distance
+from nsga2.tournament import tournament
+from nsga2.environment_selection import environment_selection
+from nsga2.GLOBAL import Global
 
 from matplotlib import pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 
 Global = Global(d=1000, lower=-np.ones((1, 1000)), upper=np.ones((1, 1000)))
 
 
 class wof_nsgaii(object):
     """
-    nsgaii for large-scale multi-objective optimization problems
+    nsga2 for large-scale multi-objective optimization problems
     """
 
     def __init__(self, delta=0.5, group_no=4, p=0.2, choose_no=Global.M, weight_size=10, eva=500 * 100, decs=None,

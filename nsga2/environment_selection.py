@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # encoding: utf-8
 import numpy as np
-from nd_sort import nd_sort
-from crowding_distance import crowding_distance
+from nsga2.nd_sort import nd_sort
+from nsga2.crowding_distance import crowding_distance
 
 
 def environment_selection(population, N):
